@@ -1,0 +1,61 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+ 
+
+    <fieldset>
+      <legend>Fui aprovado?</legend>
+
+      <div>Digite uma nota de 0 a 10, para aprovação a nota deve ser maior que 7.</div>
+      
+      <br>
+
+      <label for="nota">Digite a nota</label>
+      <input type="number" id="nota">
+
+      <br>
+      <br>
+
+      <button id="btn" onclick="caracter()">Nota</button>
+
+      <br>
+      <br>
+
+       resposta:
+
+       <br>
+
+       <textarea id="res" cols="20" rows="1" readonly></textarea>
+    
+
+      <script>
+
+        function caracter() {
+          let nota = document.getElementById('nota').value
+          let res = document.getElementById('res')
+
+
+          if (nota == undefined || nota < 0 ||  nota > 10) {
+            document.getElementById('res').innerHTML = "Digite uma nota valida"
+          }
+          else if (nota >= 0 && nota < 7 ) {
+            document.getElementById('res').innerHTML = "Reprovado"
+          }
+          else if (nota >= 7) {
+            document.getElementById('res').innerHTML = "Aprovado"
+          }
+        }
+
+      </script>
+
+    </fieldset>
+
+  
+</body>
+</html>
